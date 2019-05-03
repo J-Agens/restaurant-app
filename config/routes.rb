@@ -1,12 +1,6 @@
 Rails.application.routes.draw do
-  get 'orders/create'
-  get 'orders/update'
-  get 'orders/destroy'
-  get 'parties/index'
-  get 'parties/create'
-  get 'parties/update'
-  get 'parties/destroy'
-  get 'tables/index'
-  
+  resources :tables, only:[:index]
+  resources :parties, only:[:index, :create, :update, :destroy]
+  resources :orders, only:[:create, :update, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
