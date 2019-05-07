@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  
   def create
     @order = Order.new(item_name: params[:item_name], served: false, price: params[:price], party_id: params[:party_id])
     @order.save

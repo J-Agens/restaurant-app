@@ -19,5 +19,5 @@ Party.create(name: Faker::Name.first_name, table_id: 4)
 
 
 20.times do
-  Order.create(item_name: Faker::Food.dish, served: false, price: rand(1.00..19.99), party_id: rand(Party.first.id..Party.last.id))
+  Order.create(item_name: Faker::Food.dish, served: false, price: rand(5..20), party_id: rand(Party.first.id..Party.last.id))
 end
