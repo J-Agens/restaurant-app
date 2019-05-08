@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  
+
   def create
     @order = Order.new(item_name: params[:item_name], served: false, price: params[:price], party_id: params[:party_id])
     @order.save
@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
 
   def update
     @order = Order.find_by(id: params[:id])
-    @order.update(served?: params[:served?])
+    @order.update(served: params[:served])
     render json: @order, status: 201
   end
 
